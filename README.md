@@ -108,6 +108,12 @@ element_pokemon
 index home
 ![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/4b/ss/index.png)
 
-crud pokemon
+add pokemon
 ![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/4b/ss/pokemon.png)
+
+add element
+![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/4b/ss/add%20element.png)
+
+view add element
+![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/4b/ss/add%20element%20coba.png)
 
