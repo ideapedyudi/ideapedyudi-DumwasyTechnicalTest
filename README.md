@@ -88,7 +88,7 @@
 ![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/screenshot/soal%203.png)
 
 
-## Soal No. 3
+## Soal No. 4
 > * Bahasa yang digunakan html, css, javascript, php, database mysql dan framework bootstrap
 
 ## database
