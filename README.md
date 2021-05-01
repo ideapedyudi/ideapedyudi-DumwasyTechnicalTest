@@ -94,13 +94,16 @@
 ## database
 
 pokemon_tb
+
 ![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/4a/pokemon_tb.png)
 
 
 element_tb
+
 ![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/4a/element_tb.png)
 
 element_pokemon
+
 ![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/4a/element_pokemon.png)
 
 
