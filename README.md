@@ -30,4 +30,4 @@ result: 15
 
     console.log(count_handshake(6));
 <br />
-![ss3](https://github.com/xplacebo/xplacebo-dmy/blob/main/screenshot/soal%201.png)
+![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/screenshot/soal%201.png)
