@@ -31,4 +31,5 @@ result: 15
     console.log(count_handshake(6));
 <br />
 
+<p>Hasil</p>
 ![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/screenshot/soal%201.png)
