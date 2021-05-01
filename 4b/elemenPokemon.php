@@ -61,6 +61,7 @@ if (isset($_POST['tambahPokemonElement'])) {
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nama Pokemon</th>
+                    <th scope="col">Photo</th>
                     <th scope="col">Aksi</th>
                 </tr>
             </thead>
@@ -105,6 +106,7 @@ if (isset($_POST['tambahPokemonElement'])) {
                     <tr>
                         <th scope="row"><?php echo $i++; ?></th>
                         <td><?php echo $row["name"]; ?></td>
+                        <td><img src="asset/<?php echo $row["photo"]; ?>" width="80px" alt=""></td>
                         <td>
                             <a href="#modaltambah<?php echo $row['id_pokemon']; ?>" type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#modaltambah<?php echo $row['id_pokemon']; ?>">Add Element</a>
                         </td>

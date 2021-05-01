@@ -158,7 +158,7 @@ if (isset($_POST["submitubah"])) {
                     <tr>
                         <th scope="row"><?php echo $i++; ?></th>
                         <td><?php echo $row["name"]; ?></td>
-                        <td><?php echo $row["photo"]; ?></td>
+                        <td><img src="asset/<?php echo $row["photo"]; ?>" width="80px" alt=""></td>
                         <td>
                             <a href="#modaltambah<?php echo $row['id_pokemon']; ?>" type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#modaltambah<?php echo $row['id_pokemon']; ?>">Edit</a> |
                             <a href="hapusPokemon.php?id_pokemon=<?php echo $row['id_pokemon']; ?>" class="btn btn-danger">Hapus</a>
