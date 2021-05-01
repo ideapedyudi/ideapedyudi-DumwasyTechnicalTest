@@ -89,7 +89,7 @@
 
 
 ## Soal No. 3
-> * Bahasa yang digunakan html, css, javascript dan bootstrap
+> * Bahasa yang digunakan html, css, javascript, php, database mysql dan bootstrap
 
 ## database
 
