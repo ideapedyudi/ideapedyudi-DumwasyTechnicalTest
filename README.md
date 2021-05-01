@@ -1,6 +1,7 @@
 # xplacebo-dmy
 ## Soal No. 1
 <br/>
+
 > * Bahasa yang digunakan JavaScript
 > * Menjalankan dengan online compiler https://es6console.com/ko5by6tv/
 
@@ -23,6 +24,7 @@
 
 ## Soal No. 2
 <br />
+
 > * Bahasa yang digunakan php
 > * Menjalankan dengan online compiler https://onlinegdb.com/SJkAW5cv_
 
@@ -49,6 +51,7 @@
 
 ## Soal No. 3
 <br />
+
 > * Bahasa yang digunakan JavaScript
 > * Menjalankan dengan online compiler https://es6console.com/ko5hme4x/_
 
