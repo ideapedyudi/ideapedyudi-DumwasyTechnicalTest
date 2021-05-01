@@ -117,6 +117,8 @@ add pokemon
 add element
 ![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/4b/ss/add%20element.png)
 
+view add element
+
 ![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/4b/ss/add%20element%202.png)
 
 view add element
