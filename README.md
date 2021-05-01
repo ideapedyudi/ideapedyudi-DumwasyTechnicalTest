@@ -107,9 +107,11 @@ element_pokemon
 ## program
 
 index home
+
 ![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/4b/ss/index.png)
 
 add pokemon
+
 ![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/4b/ss/pokemon.png)
 
 view add pokemon
@@ -117,10 +119,12 @@ view add pokemon
 ![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/4b/ss/view%20add%20pokemon.png)
 
 add element
+
 ![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/4b/ss/add%20element.png)
 
 ![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/4b/ss/add%20element%202.png)
 
 view add element
+
 ![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/4b/ss/add%20element%20coba.png)
 
