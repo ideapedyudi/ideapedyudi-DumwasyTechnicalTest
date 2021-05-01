@@ -26,7 +26,7 @@
 <br />
 
 > * Bahasa yang digunakan php
-> * Menjalankan dengan online compiler https://onlinegdb.com/SJkAW5cv_
+> * Menjalankan dengan online compiler https://onlinegdb.com/Hy45oejDd
 
 	<?php
 
