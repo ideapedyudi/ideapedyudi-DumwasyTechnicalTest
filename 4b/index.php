@@ -32,7 +32,7 @@ $pokemon = queryPokemonindex("SELECT * FROM pokemon_tb");
                                 Pokemon</button></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><button class="btn btn-sm btn-primary" type="button">Add
+                        <a class="nav-link" href="elemenPokemon.php"><button class="btn btn-sm btn-primary" type="button">Add
                                 Element</button></a>
                     </li>
                 </ul>
