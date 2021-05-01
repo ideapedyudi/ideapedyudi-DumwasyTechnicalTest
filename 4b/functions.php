@@ -1,32 +1,139 @@
-<!doctype html>
-<html lang="en">
+<?php
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+// koneksi
+$conn = mysqli_connect("localhost", "root", "", "pokemon");
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+// tampilkan data pokemon
+function queryPokemon($query)
+{
+    global $conn;
+    $result = mysqli_query($conn, $query);
+    $rows = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row;
+    }
+    return $rows;
+}
 
-    <title>Hello, world!</title>
-</head>
+function queryPokemonindex($query)
+{
+    global $conn;
+    $result = mysqli_query($conn, $query);
+    $rows = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row;
+    }
+    return $rows;
+}
 
-<body>
-    <h1>Hello, world!</h1>
+// tambah data
+function tambahPokemon($data)
+{
+    // ambil data dati tiap elemen dalam form
+    global $conn;
+    $name = htmlspecialchars($data["name"]);
+    $gambar = htmlspecialchars($data["gambar"]);
 
-    <!-- Optional JavaScript; choose one of the two! -->
+    // upload gambar
+    $gambar = upload();
+    if (!$gambar) {
+        return false;
+    }
 
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    // query inser data
+    $query = "INSERT INTO pokemon_tb VALUES('', '$name', '$gambar')";
+    mysqli_query($conn, $query);
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-    -->
-</body>
+    return mysqli_affected_rows($conn);
+}
 
-</html>
+// functuons upload
+function upload()
+{
+    $namaFile = $_FILES['gambar']['name'];
+    $ukuranFile = $_FILES['gambar']['size'];
+    $error = $_FILES['gambar']['error'];
+    $tmpName = $_FILES['gambar']['tmp_name'];
+
+    // cek apakah tidak ada gambar yang diupload
+    if ($error === 4) {
+        echo "
+				<script>
+					alert('pilih gambar terlebih dahulu');
+				</script>
+			";
+        return false;
+    }
+
+    // cek apakah yang diupload adalah gambar
+    $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+    $ekstensiGambar = explode('.', $namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+        echo "
+				<script>
+					alert('yang anda aploud bukan gambar!');
+				</script>
+			";
+        return false;
+    }
+
+    // cek ukurannya terlalu besar
+    if ($ukuranFile > 1000000) {
+        echo "
+				<script>
+					alert('ukuran gambar terlalu besar!');
+				</script>
+			";
+        return false;
+    }
+
+    // lolos pengecekan, gambar siap di upload
+    // generate nama gambar baru
+
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= '.';
+    $namaFileBaru .= $ekstensiGambar;
+
+
+    move_uploaded_file($tmpName, 'asset/' . $namaFileBaru);
+
+    return $namaFileBaru;
+}
+
+
+// update data pokemon
+function ubahPokemon($data)
+{
+    global $conn;
+
+    $id_pokemon = $data["id_pokemon"];
+    $name = htmlspecialchars($data["name"]);
+    $gambarLama = htmlspecialchars($data["gambarLama"]);
+
+    // cek apakah user pilih gambar baru atau tidak
+    if ($_FILES['gambar']['error'] === 4) {
+        $gambar = $gambarLama;
+    } else {
+        $gambar = upload();
+    }
+
+    $query = "UPDATE pokemon_tb SET
+
+				name = '$name',
+				photo = '$gambar'
+			  WHERE id_pokemon = $id_pokemon
+			";
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
+// hapus data
+function hapusPokemon($id_pokemon)
+{
+    global $conn;
+    mysqli_query($conn, "DELETE FROM pokemon_tb WHERE id_pokemon = $id_pokemon");
+
+    return mysqli_affected_rows($conn);
+}
