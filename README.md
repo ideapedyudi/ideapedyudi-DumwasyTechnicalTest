@@ -44,7 +44,7 @@
     
 <p>Hasil</p>
 
-![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/screenshot/soal%201.png)
+![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/screenshot/soal%202.png)
 
 
 ## Soal No. 3
@@ -82,5 +82,5 @@
     
 <p>Hasil</p>
 
-![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/screenshot/soal%201.png)
+![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/screenshot/soal%203.png)
 
