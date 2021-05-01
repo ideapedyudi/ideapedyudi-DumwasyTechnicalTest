@@ -112,6 +112,8 @@ index home
 add pokemon
 ![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/4b/ss/pokemon.png)
 
+![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/4b/ss/view%20add%20pokemon.png)
+
 add element
 ![alt text](https://github.com/xplacebo/xplacebo-dmy/blob/main/4b/ss/add%20element.png)
 
