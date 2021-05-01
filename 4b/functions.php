@@ -15,6 +15,18 @@ function queryPokemon($query)
     return $rows;
 }
 
+// tampilkan data pokemon
+function queryPokemonFilter($query)
+{
+    global $conn;
+    $result = mysqli_query($conn, $query);
+    $rows = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row;
+    }
+    return $rows;
+}
+
 function queryPokemonindex($query)
 {
     global $conn;

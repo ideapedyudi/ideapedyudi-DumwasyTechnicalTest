@@ -48,8 +48,13 @@ $pokemon = queryPokemonindex("SELECT * FROM pokemon_tb");
                         <img src="asset/<?php echo $row["photo"]; ?>" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-center"><?php echo $row["name"]; ?></h5>
-                            <a href="#" class="btn btn-success">Grass</a>
-                            <a href="#" class="btn btn-success">Poison</a>
+                            <?php
+                            $name_pokemon = $row["name"];
+                            $pokemonFilter = queryPokemonFilter("SELECT * FROM element_pokemon WHERE name_pokemon = '$name_pokemon'");
+                            ?>
+                            <?php foreach ($pokemonFilter as $rows) : ?>
+                                <a href="#" class="btn btn-success"><?php echo $rows["name_element"]; ?></a>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
